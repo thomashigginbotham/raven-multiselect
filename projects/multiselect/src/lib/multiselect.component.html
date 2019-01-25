@@ -1,0 +1,59 @@
+<select #selectControl class="multiselect-select"
+        multiple
+        (change)="onChange($event)">
+  <ng-content></ng-content>
+</select>
+
+<div class="multiselect-ui">
+  <span *ngFor="let value of selectedValues" class="multiselect-ui__choice">
+    {{ getTextForValue(value) }}
+    <button type="button" class="multiselect-ui__remove-button"
+            title="Remove"
+            (click)="onRemoveChoiceClick(value)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+        <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path>
+      </svg>
+    </button>
+  </span>
+
+  <input type="text" class="multiselect-ui__textbox"
+         [placeholder]="placeholder"
+         [(ngModel)]="customValue"
+         (input)="onTextInput($event)"
+         (keydown.enter)="onTextEnterKey()"
+         (focus)="openMenu()">
+
+  <button type="button"
+          id="ravenMultiselectMenuButton"
+          class="multiselect-ui__menu-button"
+          [title]="isMenuOpen ? 'Close Menu' : 'Open Menu'"
+          aria-haspopup="true"
+          aria-controls="ravenMultiselectDropdown"
+          (click)="toggleMenu()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+      <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+    </svg>
+  </button>
+</div>
+
+<div id="ravenMultiselectDropdown" class="multiselect-dropdown"
+     role="menu"
+     aria-labelledby="ravenMultiselectMenuButton"
+     [hidden]="!isMenuOpen">
+  <ul *ngIf="availableChoices && availableChoices.length; else noChoices"
+      role="none">
+    <li *ngFor="let choice of availableChoices"
+        class="multiselect-dropdown__choice"
+        role="menuitem"
+        tabindex="0"
+        (click)="onAddChoiceClick(choice.value)"
+        (keydown.enter)="onAddChoiceClick(choice.value)"
+        (keydown.space)="onAddChoiceClick(choice.value)">
+      {{ choice.text }}
+    </li>
+  </ul>
+
+  <ng-template #noChoices>
+    <p class="multiselect-dropdown__empty"><em>No choices available.</em></p>
+  </ng-template>
+</div>

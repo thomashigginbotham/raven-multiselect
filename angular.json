@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "multiselect": {
+      "root": "projects/multiselect",
+      "sourceRoot": "projects/multiselect/src",
+      "projectType": "library",
+      "prefix": "raven",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/multiselect/tsconfig.lib.json",
+            "project": "projects/multiselect/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/multiselect/src/test.ts",
+            "tsConfig": "projects/multiselect/tsconfig.spec.json",
+            "karmaConfig": "projects/multiselect/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/multiselect/tsconfig.lib.json",
+              "projects/multiselect/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-library"
