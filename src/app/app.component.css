@@ -1,19 +1,20 @@
 /* Multiselect Styles */
 raven-multiselect {
-  /* --rms-control-height: 2rem;
+  /* Use the following variables to customize the multiselect */
+  --rms-control-height: 2rem;
   --rms-control-color-text: #222;
   --rms-control-color-bg: #fff;
   --rms-control-color-border: #ccc;
-  --rms-control-border-radius: 1rem;
+  --rms-control-border-radius: .25rem;
 
   --rms-choice-color-text: #fff;
   --rms-choice-color-bg: #104888;
   --rms-choice-color-border: #104888;
-  --rms-choice-border-radius: 1.5rem;
+  --rms-choice-border-radius: .5rem;
 
   --rms-dropdown-color-text: #222;
   --rms-dropdown-color-bg: #fff;
   --rms-dropdown-color-border: #ccc;
   --rms-dropdown-color-hover: #eeeeee;
-  --rms-dropdown-border-radius: 0; */
+  --rms-dropdown-border-radius: .25rem .25rem 0 0;
 }

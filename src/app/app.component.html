@@ -1,12 +1,13 @@
 <h1>Raven Multiselect Component</h1>
+<p>Select multiple values from the drop-down box below, or type in new values.</p>
 
-<form [formGroup]="ravenColorForm" novalidate>
+<form [formGroup]="colorForm" novalidate>
   <fieldset>
     <legend>Select one or more colors</legend>
 
     <raven-multiselect formControlName="color"
-                       [enableCustomValues]="true"
-                       placeholder="Select a color">
+                       placeholder="Type and press Enter"
+                       [enableCustomValues]="true">
       <option value="red">Red</option>
       <option value="blue">Blue</option>
       <option value="green">Green</option>
@@ -16,7 +17,7 @@
   </fieldset>
 
   <p>
-    Value: {{ ravenColorForm.get('color').value }}<br>
-    Is Valid: {{ ravenColorForm.valid ? 'true' : 'false' }}
+    <strong>Value</strong>: {{ colorForm.get('color').value }}<br>
+    <strong>Is Valid</strong>: {{ colorForm.valid ? 'true' : 'false' }}
   </p>
 </form>

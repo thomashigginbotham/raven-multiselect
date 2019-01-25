@@ -1,27 +1,107 @@
-# AngularLibrary
+# Raven Multiselect for Angular 6+
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
+An Angular component for selecting multiple values from a list.
 
-## Development server
+![demo](screenshots/sample.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+* Add values not present in the list
+* Filter the list as you type
+* Keyboard/touch accessible
+* Compatible with template driven and reactive forms
+* Easily styled with CSS variables
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+Install into your Angular project using NPM.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`npm install raven-multiselect --save`
 
-## Running unit tests
+Import the **MultiselectModule** into your module, and import the **FormsModule** or **ReactiveFormsModule** depending on which you'll be using (**FormsModule** is used for these examples).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```ts
+import { MultiselectModule } from 'raven-multiselect';
+import { FormsModule } from '@angular/forms';
+// ...
 
-## Running end-to-end tests
+@NgModule({
+  imports: [
+    MultiselectModule,
+    FormsModule
+    // ...
+  ],
+  // ...
+})
+export class AppModule { }
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Usage
 
-## Further help
+Add a &lt;raven-multiselect&gt; element to your template, and use &lt;option&gt; tags to create text/values for the multiselect list.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <raven-multiselect [(ngModel)]="selectedValues"
+                       [enableCustomValues]="true"
+                       placeholder="Type or select a color">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="yellow">Yellow</option>
+    </raven-multiselect>`,
+  styles: []
+})
+export class AppComponent {
+  selectedValues = 'red,blue';
+}
+```
+
+### Options
+| Option             | Type          | Description                            | Default Value       
+| :----------------- | :------------ | :------------------------------------- | :-------------------
+| enableCustomValues | boolean       | Allows user to type in a custom value. | false
+| placeholder        | string        | Placeholder text for text box.         | Type and press Enter
+
+### Styling
+
+CSS variables are used for styling. Example:
+
+```css
+raven-multiselect {
+  --rms-choice-color-text: #222;
+  --rms-choice-color-bg: #eee;
+}
+```
+
+#### Available CSS Variables
+
+| Variable                     | Description
+| :--------------------------- | :----------------------------------------
+| --rms-control-height         | Height of the main box.
+| --rms-control-color-text     | Text color of the box.
+| --rms-control-color-bg       | Background color of the box.
+| --rms-control-color-border   | Border color of the box.
+| --rms-control-border-radius  | Border radius for the box.
+| --rms-choice-color-text      | Text color of selected values.
+| --rms-choice-color-bg        | Background color of selected values.
+| --rms-choice-color-border    | Border color of selected values.
+| --rms-choice-border-radius   | Border radius for selected values.
+| --rms-dropdown-color-text    | Text color of drop-down box.
+| --rms-dropdown-color-bg      | Background color of drop-down box.
+| --rms-dropdown-color-border  | Border color of drop-down box.
+| --rms-dropdown-border-radius | Border radius for drop-down box.
+| --rms-dropdown-color-hover   | Background color of hover/focused items.
+
+## Development
+
+Clone this repository and run `npm install`. Then run `ng serve -o` to start a development server and to open a sample page in your browser.
+
+## License
+
+MIT license.

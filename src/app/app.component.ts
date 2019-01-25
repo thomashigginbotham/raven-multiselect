@@ -7,10 +7,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  ravenColorForm: FormGroup;
+  colorForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private _formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
   }
 
   createForms(): void {
-    this.ravenColorForm = this.formBuilder.group({
-      color: ['', Validators.required]
+    this.colorForm = this._formBuilder.group({
+      color: ['blue', Validators.required]
     });
   }
 }

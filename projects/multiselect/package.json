@@ -1,6 +1,13 @@
 {
-  "name": "multiselect",
-  "version": "0.0.1",
+  "name": "raven-multiselect",
+  "version": "0.0.2",
+  "description": "An Angular component for selecting multiple values from a list.",
+  "keywords": ["angular", "multiselect", "dropdown", "select", "multiple"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomashigginbotham/raven-multiselect"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
