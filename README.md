@@ -81,27 +81,27 @@ raven-multiselect {
 
 #### Available CSS Variables
 
-| Variable                       | Description
-| :---------------------------   | :----------------------------------------
-| --rms-control-height           | Height of the main box.
-| --rms-control-space-multiplier | Affects the amount of padding applied.
-| --rms-control-color-text       | Text color of the box.
-| --rms-control-color-bg         | Background color of the box.
-| --rms-control-color-border     | Border color of the box.
-| --rms-control-border-radius    | Border radius for the box.
-| --rms-choice-color-text        | Text color of selected values.
-| --rms-choice-color-bg          | Background color of selected values.
-| --rms-choice-color-border      | Border color of selected values.
-| --rms-choice-border-radius     | Border radius for selected values.
-| --rms-dropdown-color-text      | Text color of drop-down box.
-| --rms-dropdown-color-bg        | Background color of drop-down box.
-| --rms-dropdown-color-border    | Border color of drop-down box.
-| --rms-dropdown-border-radius   | Border radius for drop-down box.
-| --rms-dropdown-color-hover     | Background color of hover/focused items.
+| Variable                       | Description                                                                | Default Value
+| :---------------------------   | :------------------------------------------------------------------------- | :------------
+| --rms-control-height           | Height of the main box.                                                    | 4rem
+| --rms-control-space-multiplier | Affects the amount of padding applied (use 0.5 – 1.5 for best results).    | 1
+| --rms-control-color-text       | Text color of the box.                                                     | #555
+| --rms-control-color-bg         | Background color of the box.                                               | #fff
+| --rms-control-color-border     | Border color of the box.                                                   | #ccc
+| --rms-control-border-radius    | Border radius for the box.                                                 | 0
+| --rms-choice-color-text        | Text color of selected values.                                             | #fff
+| --rms-choice-color-bg          | Background color of selected values.                                       | #333
+| --rms-choice-color-border      | Border color of selected values.                                           | #333
+| --rms-choice-border-radius     | Border radius for selected values.                                         | 0
+| --rms-dropdown-color-text      | Text color of drop-down box.                                               | #000
+| --rms-dropdown-color-bg        | Background color of drop-down box.                                         | #fff
+| --rms-dropdown-color-border    | Border color of drop-down box.                                             | #ccc
+| --rms-dropdown-border-radius   | Border radius for drop-down box.                                           | 0
+| --rms-dropdown-color-hover     | Background color of hover/focused items.                                   | #eee
 
 ## Development
 
-Clone this repository and run `npm install`. Then run `ng serve -o` to start a development server and to open a sample page in your browser.
+To contribute to the development of this component, clone this repository and run `npm install`. Then run `ng serve -o` to start a development server and to open a sample page in your browser.
 
 ## License
 

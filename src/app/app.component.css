@@ -8,14 +8,14 @@ raven-multiselect {
   --rms-control-color-border: #ccc;
   --rms-control-border-radius: .25rem;
 
-  --rms-choice-color-text: #fff;
-  --rms-choice-color-bg: #104888;
-  --rms-choice-color-border: #104888;
+  --rms-choice-color-text: #104888;
+  --rms-choice-color-bg: #eff6ff;
+  --rms-choice-color-border: #adc5e0;
   --rms-choice-border-radius: .5rem;
 
   --rms-dropdown-color-text: #222;
   --rms-dropdown-color-bg: #fff;
   --rms-dropdown-color-border: #ccc;
-  --rms-dropdown-color-hover: #eeeeee;
+  --rms-dropdown-color-hover: #eff6ff;
   --rms-dropdown-border-radius: .25rem .25rem 0 0;
 }
