@@ -1,7 +1,7 @@
 /* Multiselect Styles */
 raven-multiselect {
   /* Use the following variables to customize the multiselect */
-  --rms-control-height: 2rem;
+  --rms-control-height: 4rem;
   --rms-control-color-text: #222;
   --rms-control-color-bg: #fff;
   --rms-control-color-border: #ccc;
