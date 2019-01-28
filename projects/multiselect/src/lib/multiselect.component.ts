@@ -17,6 +17,11 @@ import {
 
 import { SelectOption } from './interfaces';
 
+interface SvgIcons {
+  arrowDown: string,
+  close: string
+};
+
 @Component({
   selector: 'raven-multiselect',
   templateUrl: './multiselect.component.html',
@@ -48,16 +53,36 @@ export class MultiselectComponent
   customValue: string;
   isMenuOpen: boolean;
 
+  private _icons: SvgIcons;
   private _propagateChange: (data: string) => { };
 
   constructor(
     private _elementRef: ElementRef
   ) {
+    // Default settings
     this.enableCustomValues = false;
     this.placeholder = 'Type and press Enter';
     this.choices = [];
     this.selectedValues = [];
     this.isMenuOpen = false;
+
+    // Icons
+    this.icons = {
+      arrowDown: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>',
+      close: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>'
+    }
+  }
+
+  get icons(): SvgIcons {
+    return this._icons;
+  }
+
+  @Input()
+  set icons(value: SvgIcons) {
+    this._icons = value;
+
+    // Inject <style> to penetrate shadow DOM
+    this._icons.arrowDown = '<style>raven-multiselect svg {height: calc(var(--rms-control-height, 4rem) / 4)}</style>' + value['arrowDown'];
   }
 
   ngAfterViewInit(): void {
