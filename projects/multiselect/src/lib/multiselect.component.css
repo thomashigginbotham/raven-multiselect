@@ -48,7 +48,7 @@ button {
   display: flex;
   margin-left: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
   padding: 0;
-  height: calc(var(--rms-control-height, 4rem) / 2);
+  height: calc(var(--rms-control-height, 4rem) / 4);
   border: 0;
   vertical-align: middle;
   color: var(--rms-choice-color-text, #fff);
