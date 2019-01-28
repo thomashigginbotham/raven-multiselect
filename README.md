@@ -81,22 +81,23 @@ raven-multiselect {
 
 #### Available CSS Variables
 
-| Variable                     | Description
-| :--------------------------- | :----------------------------------------
-| --rms-control-height         | Height of the main box.
-| --rms-control-color-text     | Text color of the box.
-| --rms-control-color-bg       | Background color of the box.
-| --rms-control-color-border   | Border color of the box.
-| --rms-control-border-radius  | Border radius for the box.
-| --rms-choice-color-text      | Text color of selected values.
-| --rms-choice-color-bg        | Background color of selected values.
-| --rms-choice-color-border    | Border color of selected values.
-| --rms-choice-border-radius   | Border radius for selected values.
-| --rms-dropdown-color-text    | Text color of drop-down box.
-| --rms-dropdown-color-bg      | Background color of drop-down box.
-| --rms-dropdown-color-border  | Border color of drop-down box.
-| --rms-dropdown-border-radius | Border radius for drop-down box.
-| --rms-dropdown-color-hover   | Background color of hover/focused items.
+| Variable                       | Description
+| :---------------------------   | :----------------------------------------
+| --rms-control-height           | Height of the main box.
+| --rms-control-space-multiplier | Affects the amount of padding applied.
+| --rms-control-color-text       | Text color of the box.
+| --rms-control-color-bg         | Background color of the box.
+| --rms-control-color-border     | Border color of the box.
+| --rms-control-border-radius    | Border radius for the box.
+| --rms-choice-color-text        | Text color of selected values.
+| --rms-choice-color-bg          | Background color of selected values.
+| --rms-choice-color-border      | Border color of selected values.
+| --rms-choice-border-radius     | Border radius for selected values.
+| --rms-dropdown-color-text      | Text color of drop-down box.
+| --rms-dropdown-color-bg        | Background color of drop-down box.
+| --rms-dropdown-color-border    | Border color of drop-down box.
+| --rms-dropdown-border-radius   | Border radius for drop-down box.
+| --rms-dropdown-color-hover     | Background color of hover/focused items.
 
 ## Development
 

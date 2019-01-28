@@ -20,7 +20,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding: calc(var(--rms-control-height, 4rem) / 4 - 1px) calc(var(--rms-control-height, 4rem) / 4) 0;
+  padding: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25) - 1px) calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25)) 0;
   border: 1px solid var(--rms-control-color-border, #ccc);
   border-radius: var(--rms-control-border-radius, 0);
   background-color: var(--rms-control-color-bg, #fff);
@@ -31,9 +31,9 @@ button {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  margin-right: calc(var(--rms-control-height, 4rem) / 4);
-  margin-bottom: calc(var(--rms-control-height, 4rem) / 4);
-  padding: calc(var(--rms-control-height, 4rem) / 8) calc(var(--rms-control-height, 4rem) / 4);
+  margin-right: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
+  margin-bottom: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
+  padding: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .125)) calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
   height: calc(var(--rms-control-height, 4rem) / 2);
   border: 1px solid var(--rms-choice-color-border, #333);
   border-radius: calc(var(--rms-choice-border-radius, 0) / 2);
@@ -46,7 +46,7 @@ button {
 
 .multiselect-ui__remove-button {
   display: flex;
-  margin-left: calc(var(--rms-control-height, 4rem) / 4);
+  margin-left: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
   padding: 0;
   height: calc(var(--rms-control-height, 4rem) / 2);
   border: 0;
@@ -67,8 +67,8 @@ button {
 .multiselect-ui__textbox {
   box-sizing: border-box;
   flex: 1;
-  margin-right: calc(var(--rms-control-height, 4rem) / 4);
-  margin-bottom: calc(var(--rms-control-height, 4rem) / 4);
+  margin-right: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
+  margin-bottom: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
   height: calc(var(--rms-control-height, 4rem) / 2);
   border: 0;
   font-size: calc(var(--rms-control-height, 4rem) / 4);
@@ -81,7 +81,7 @@ button {
 }
 
 .multiselect-ui__menu-button {
-  margin-bottom: calc(var(--rms-control-height, 4rem) / 4);
+  margin-bottom: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
   padding: 0;
   height: calc(var(--rms-control-height, 4rem) / 2);
   border: 0;
@@ -117,7 +117,7 @@ button {
 }
 
 .multiselect-dropdown__choice {
-  padding: calc(var(--rms-control-height, 4rem) / 4);
+  padding: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
   white-space: nowrap;
   text-overflow: ellipsis;
   cursor: pointer
@@ -130,5 +130,5 @@ button {
 
 .multiselect-dropdown__empty {
   margin: 0;
-  padding: calc(var(--rms-control-height, 4rem) / 4);
+  padding: calc(var(--rms-control-height, 4rem) * calc(var(--rms-control-space-multiplier , 1) * .25));
 }
