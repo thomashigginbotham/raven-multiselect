@@ -128,7 +128,7 @@ export class MultiselectComponent
         keyword, this.getUnselectedChoices()
       );
 
-      if (!this.availableChoices.length) {
+      if (!this.availableChoices.length && this.enableCustomValues) {
         this.availableChoices
           .push({ text: this.customValue, value: this.customValue });
       }
@@ -138,28 +138,28 @@ export class MultiselectComponent
   }
 
   onTextEnterKey(): void {
-    if (this.availableChoices.length) {
-      // Add first choice from available choices
-      const value = this.availableChoices[0].value;
+    if (this.customValue === '') {
+      return;
+    }
 
-      if (value.toLowerCase() === this.customValue.toLowerCase()) {
-        this.addSelectedValue(value);
-        this.selectOptionByValue(value);
-        this.availableChoices = this.getUnselectedChoices();
-        this.customValue = '';
+    // Add choice if it exists in unselected choices
+    const unselectedChoices = this.getUnselectedChoices();
+    const matchingChoice = unselectedChoices.find(choice =>
+      this.customValue.toLowerCase() === choice.text.toLowerCase());
 
-        this._propagateChange(this.selectedValues.join(','));
+    if (matchingChoice) {
+      this.addSelectedValue(matchingChoice.value);
+      this.selectOptionByValue(matchingChoice.value);
+      this.availableChoices = this.getUnselectedChoices();
+      this.customValue = '';
 
-        return;
-      }
+      this._propagateChange(this.selectedValues.join(','));
+
+      return;
     }
 
     // Add custom value if not in available choices
     if (this.enableCustomValues) {
-      if (this.customValue === '') {
-        return;
-      }
-
       this.addSelectedValue(this.customValue);
       this.availableChoices = this.getUnselectedChoices();
       this.customValue = '';
