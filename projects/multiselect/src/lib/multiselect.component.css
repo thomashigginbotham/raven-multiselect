@@ -59,9 +59,14 @@ button {
   height: calc(var(--rms-control-height, 4rem) / 4);
 }
 
+.multiselect-ui__input {
+  display: flex;
+  flex: 1 0 25%;
+}
+
 .multiselect-ui__textbox {
   box-sizing: border-box;
-  flex: 1 0 25%;
+  flex: 1;
   margin-right: calc(var(--rms-control-height, 4rem) / 4);
   margin-bottom: calc(var(--rms-control-height, 4rem) / 4);
   height: calc(var(--rms-control-height, 4rem) / 2);
