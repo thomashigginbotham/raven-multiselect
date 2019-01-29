@@ -13,7 +13,10 @@
         {{ choice.text }}
       </option>
     </raven-multiselect>
+
   </fieldset>
+
+  <p><button type="button" (click)="onResetClick()">Clear Multiselect</button></p>
 
   <p>
     <strong>Value</strong>: {{ colorForm.get('color').value }}<br>

@@ -298,11 +298,14 @@ export class MultiselectComponent
   }
 
   writeValue(value: string): void {
-    if (!value) {
-      return;
+    if (typeof(value) === 'string' && value.length > 0) {
+      this.selectedValues = value.split(',');
+    } else {
+      this.selectedValues = [];
     }
 
-    this.selectedValues = value.split(',');
+    this.availableChoices = this.getUnselectedChoices();
+    this.selectedValues.forEach(value => this.selectOptionByValue(value));
   }
 
   registerOnChange(fn: (data: string) => { }): void {

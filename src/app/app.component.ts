@@ -51,6 +51,12 @@ export class AppComponent implements OnInit {
     this.createForms();
   }
 
+  onResetClick() {
+    this.colorForm.patchValue({
+      color: ''
+    });
+  }
+
   createForms(): void {
     this.colorForm = this._formBuilder.group({
       color: ['blue', Validators.required]
