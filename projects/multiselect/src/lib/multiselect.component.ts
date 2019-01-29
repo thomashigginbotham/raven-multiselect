@@ -180,9 +180,11 @@ export class MultiselectComponent
    */
   getChoices(): SelectOption[] {
     const selectElement = this.selectControl.nativeElement as HTMLSelectElement;
+    const optionNodes = Array.prototype.filter
+      .call(selectElement.childNodes, child => child.nodeName === 'OPTION');
 
     const choices = Array.prototype.map
-      .call(selectElement.childNodes, (child: HTMLOptionElement) => {
+      .call(optionNodes, (child: HTMLOptionElement) => {
         return {
           text: child.textContent,
           value: child.value
