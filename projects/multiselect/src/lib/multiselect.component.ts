@@ -44,7 +44,7 @@ export class MultiselectComponent
   @Input()
   placeholder: string;
 
-  @ViewChild('selectControl')
+  @ViewChild('selectControl', { static: true })
   selectControl: ElementRef;
 
   choices: SelectOption[];

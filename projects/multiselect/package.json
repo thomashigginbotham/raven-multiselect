@@ -1,6 +1,6 @@
 {
   "name": "raven-multiselect",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "An Angular component for selecting multiple values from a list.",
   "keywords": ["angular", "multiselect", "dropdown", "select", "multiple"],
   "license": "MIT",
